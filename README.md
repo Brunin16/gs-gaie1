@@ -130,7 +130,7 @@ informados, exibindo probabilidade, nível de risco e a comparação dos modelos
 **Sugestão de deploy público (gratuito):** [Streamlit Community Cloud](https://streamlit.io/cloud)
 — conectar o repositório GitHub e apontar para `src/app.py`.
 
-🔗 **Link da aplicação em funcionamento:** _preencher após o deploy_
+🔗 **Link da aplicação em funcionamento:** https://rm558303gs-gaie1.streamlit.app/
 
 ## 9. Estrutura do repositório
 
