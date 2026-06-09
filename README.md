@@ -149,6 +149,7 @@ orbitalfire-gaie/
 │   └── shap_bar.png
 ├── src/
 │   ├── generate_dataset.py        # geração dos dados
+│   ├── features.py                # engenharia de atributos derivados
 │   ├── train_pipeline.py          # pipeline de ML + SHAP
 │   └── app.py                     # deploy Streamlit
 ├── requirements.txt
