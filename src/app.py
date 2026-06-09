@@ -3,6 +3,7 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
+import pydeck as pdk
 import streamlit as st
 
 from features import add_features
@@ -85,6 +86,32 @@ def main():
         st.write(f"- Acurácia (teste): {r['test_accuracy']:.1%}")
         st.write(f"- ROC-AUC (teste):  {r['test_roc_auc']:.3f}")
         st.write(f"- F1 (teste):       {r['test_f1']:.3f}")
+
+    st.divider()
+    st.subheader("Localização da observação")
+
+    _cor_risco = {
+        "BAIXO":    [0, 200, 0, 210],
+        "MODERADO": [255, 200, 0, 210],
+        "ALTO":     [255, 120, 0, 210],
+        "CRÍTICO":  [220, 0, 0, 210],
+    }
+    mapa_df = pd.DataFrame([{"lat": latitude, "lon": longitude}])
+    camada = pdk.Layer(
+        "ScatterplotLayer",
+        data=mapa_df,
+        get_position="[lon, lat]",
+        get_color=_cor_risco[nivel],
+        get_radius=80_000,
+        pickable=True,
+    )
+    st.pydeck_chart(pdk.Deck(
+        layers=[camada],
+        initial_view_state=pdk.ViewState(
+            latitude=latitude, longitude=longitude, zoom=4, pitch=0
+        ),
+        tooltip={"text": f"Lat: {latitude:.2f}, Lon: {longitude:.2f}\nRisco: {nivel} ({prob:.1%})"},
+    ))
 
     st.divider()
     st.subheader("Comparação de modelos")
