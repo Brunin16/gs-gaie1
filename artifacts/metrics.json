@@ -1,0 +1,70 @@
+{
+  "best_model": "Logistic Regression",
+  "results": {
+    "Logistic Regression": {
+      "cv_auc_mean": 0.9041838246938729,
+      "cv_auc_std": 0.009069260448216092,
+      "test_accuracy": 0.824,
+      "test_precision": 0.7967479674796748,
+      "test_recall": 0.7443037974683544,
+      "test_f1": 0.7696335078534031,
+      "test_roc_auc": 0.897349095093629
+    },
+    "Random Forest": {
+      "cv_auc_mean": 0.8945701159131099,
+      "cv_auc_std": 0.009285742891523837,
+      "test_accuracy": 0.823,
+      "test_precision": 0.8044692737430168,
+      "test_recall": 0.7291139240506329,
+      "test_f1": 0.7649402390438247,
+      "test_roc_auc": 0.8851637200543991
+    },
+    "Gradient Boosting": {
+      "cv_auc_mean": 0.8952630903553638,
+      "cv_auc_std": 0.008419746512990657,
+      "test_accuracy": 0.815,
+      "test_precision": 0.782258064516129,
+      "test_recall": 0.7367088607594937,
+      "test_f1": 0.758800521512386,
+      "test_roc_auc": 0.8898922481431112
+    }
+  },
+  "feature_columns": [
+    "mes",
+    "temperatura_c",
+    "umidade_relativa",
+    "velocidade_vento_kmh",
+    "precipitacao_mm",
+    "dias_sem_chuva",
+    "ndvi",
+    "indice_fwi",
+    "latitude",
+    "longitude",
+    "altitude_m",
+    "tipo_cobertura",
+    "severidade_seca",
+    "estresse_termico",
+    "estacao_seca",
+    "combustivel_seco"
+  ],
+  "numeric_columns": [
+    "mes",
+    "temperatura_c",
+    "umidade_relativa",
+    "velocidade_vento_kmh",
+    "precipitacao_mm",
+    "dias_sem_chuva",
+    "ndvi",
+    "indice_fwi",
+    "latitude",
+    "longitude",
+    "altitude_m",
+    "severidade_seca",
+    "estresse_termico",
+    "estacao_seca",
+    "combustivel_seco"
+  ],
+  "categorical_columns": [
+    "tipo_cobertura"
+  ]
+}
